@@ -4,6 +4,8 @@ on:
     branches:
       - main 
 
+permissions: write-all
+
 jobs:
   copy-docs:
     runs-on: ubuntu-latest
