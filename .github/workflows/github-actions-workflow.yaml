@@ -27,7 +27,7 @@ jobs:
             # Checkout repository
             git clone --depth 1 --branch main https://github.com/TestOrgLeonB/$repo.git $repo
             # Copy doc.md
-            cp $repo/doc.md ./docs/$repo-doc.md
+            cp $repo/doc.md $repo-doc.md
           done
 
       - name: Commit changes
