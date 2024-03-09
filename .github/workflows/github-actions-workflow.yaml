@@ -30,6 +30,9 @@ jobs:
             git clone --depth 1 --branch main https://github.com/TestOrgLeonB/$repo.git $repo
             # Copy doc.md
             cp $repo/doc.md $repo-doc.md
+            # Clean Up
+            rm -rf $repo
+
           done
 
       - name: Commit changes
