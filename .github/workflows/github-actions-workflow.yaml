@@ -24,14 +24,17 @@ jobs:
 
       - name: Checkout and copy docs from each repository
         run: |
+          counter=1
           for repo in ${{ steps.fetch_repos.outputs.repos }}; do
             echo "Processing $repo"
+            echo "Process $counter"
+            counter++
             # Checkout repository
-            git clone --depth 1 --branch main https://github.com/TestOrgLeonB/$repo.git $repo
+            #git clone --depth 1 --branch main https://github.com/TestOrgLeonB/$repo.git $repo
             # Copy doc.md
-            cp $repo/doc.md $repo-doc.md
+            #cp $repo/doc.md $repo-doc.md
             # Clean Up
-            rm -rf $repo
+            #rm -rf $repo
 
           done
 
