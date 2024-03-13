@@ -28,7 +28,7 @@ jobs:
           for repo in ${{ steps.fetch_repos.outputs.repos }}; do
             echo "Processing $repo"
             echo "Process $counter"
-            counter++
+            ((counter++))
             # Checkout repository
             #git clone --depth 1 --branch main https://github.com/TestOrgLeonB/$repo.git $repo
             # Copy doc.md
