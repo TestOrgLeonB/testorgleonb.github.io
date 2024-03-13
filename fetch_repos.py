@@ -29,6 +29,8 @@ def fetch_md_files(repo_name, token):
         for item in content:
             if item['type'] == 'file' and item['name'].endswith('.md'):
                 md_files.append(item['path'])
+
+        print(f"My Markdown file {md_files}")
         return md_files
     else:
         print(f"Failed to fetch .md files from repository {repo_name}. Status code: {response.status_code}")
