@@ -30,11 +30,6 @@ jobs:
           python fetch_repos.py TestOrgLeonB ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true
 
-      - name: Print repositories
-        if: ${{ success() }}
-        run: |
-          echo "${{ steps.fetch_repos.outputs.stdout }}"
-
 
 # name: Copy Docs to GitHub Pages
 # on:
