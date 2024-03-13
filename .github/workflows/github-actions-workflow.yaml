@@ -1,52 +1,81 @@
-name: Copy Docs to GitHub Pages
-on:
-  push:
-    branches:
-      - main 
+name: Fetch Repositories
 
-permissions: write-all
+on:
+  workflow_dispatch:
 
 jobs:
-  copy-docs:
+  fetch_repos:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout GitHub Pages repository
+      - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          repository: TestOrgLeonB/testorgleonb.github.io
-          token: ${{ secrets.GITHUB_TOKEN }}
+          python-version: '3.x'
 
       - name: Fetch repositories
         id: fetch_repos
         run: |
-          repos=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/orgs/TestOrgLeonB/repos" | jq -r '.[] | select(.name != "testorgleonb.github.io") | .name')
-          echo "My $repos"
-          echo "::set-output name=repos::$repos"
+          python fetch_repos.py TestOrgLeonB ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
 
-      - name: Checkout and copy docs from each repository
+      - name: Print repositories
+        if: ${{ success() }}
         run: |
-          counter=1
-          for repo in ${{ steps.fetch_repos.outputs.repos }}; do
-            echo "Processing $repo"
-            echo "${{ steps.fetch_repos.outputs.repos }}"
-            ((counter++))
-            # Checkout repository
-            #git clone --depth 1 --branch main https://github.com/TestOrgLeonB/$repo.git $repo
-            # Copy doc.md
-            #cp $repo/doc.md $repo-doc.md
-            # Clean Up
-            #rm -rf $repo
+          echo "${{ steps.fetch_repos.outputs.stdout }}"
 
-          done
 
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "Update docs"
+# name: Copy Docs to GitHub Pages
+# on:
+#   push:
+#     branches:
+#       - main 
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+# permissions: write-all
+
+# jobs:
+#   copy-docs:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout GitHub Pages repository
+#         uses: actions/checkout@v2
+#         with:
+#           repository: TestOrgLeonB/testorgleonb.github.io
+#           token: ${{ secrets.GITHUB_TOKEN }}
+
+#       - name: Fetch repositories
+#         id: fetch_repos
+#         run: |
+#           repos=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/orgs/TestOrgLeonB/repos" | jq -r '.[] | select(.name != "testorgleonb.github.io") | .name')
+#           echo "My $repos"
+#           echo "::set-output name=repos::$repos"
+
+#       - name: Checkout and copy docs from each repository
+#         run: |
+#           counter=1
+#           for repo in ${{ steps.fetch_repos.outputs.repos }}; do
+#             echo "Processing $repo"
+#             echo "${{ steps.fetch_repos.outputs.repos }}"
+#             ((counter++))
+#             # Checkout repository
+#             #git clone --depth 1 --branch main https://github.com/TestOrgLeonB/$repo.git $repo
+#             # Copy doc.md
+#             #cp $repo/doc.md $repo-doc.md
+#             # Clean Up
+#             #rm -rf $repo
+
+#           done
+
+#       - name: Commit changes
+#         run: |
+#           git config --local user.email "action@github.com"
+#           git config --local user.name "GitHub Action"
+#           git add .
+#           git commit -m "Update docs"
+
+#       - name: Push changes
+#         uses: ad-m/github-push-action@master
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
