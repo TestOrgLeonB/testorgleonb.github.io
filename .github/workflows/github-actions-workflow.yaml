@@ -15,6 +15,13 @@ jobs:
         with:
           python-version: '3.x'
 
+    steps:
+      - name: Checkout GitHub Pages repository
+        uses: actions/checkout@v2
+        with:
+          repository: TestOrgLeonB/testorgleonb.github.io
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Fetch repositories
         id: fetch_repos
         run: |
