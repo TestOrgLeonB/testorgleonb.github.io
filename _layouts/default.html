@@ -1,0 +1,26 @@
+<!-- _layouts/default.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            {% for subproject in site.data.projects %}
+                <li>{{ subproject.title }}
+                    <ul>
+                        {% for instruction in subproject.instructions %}
+                            <li><a href="{{ instruction.url }}">{{ instruction.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="content">
+        {{ content }}
+    </div>
+</body>
+</html>

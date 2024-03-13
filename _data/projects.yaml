@@ -1,0 +1,16 @@
+# _data/projects.yml
+- title: Subproject 1
+  instructions:
+    - title: Instruction 1
+      url: /projects/subproject1/instruction1
+    - title: Instruction 2
+      url: /projects/subproject1/instruction2
+  subproject_dir: subproject1
+# - title: Subproject 2
+#   instructions:
+#     - title: Instruction 1
+#       url: /projects/subproject2/instruction1
+#     - title: Instruction 2
+#       url: /projects/subproject2/instruction2
+  subproject_dir: subproject2
+# Add more subprojects as needed
