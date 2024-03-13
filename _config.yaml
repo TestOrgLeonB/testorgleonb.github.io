@@ -1,0 +1,8 @@
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - _projects/subproject1/instruction1.md
+  - _projects/subproject1/instruction2.md

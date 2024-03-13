@@ -12,5 +12,5 @@
 #       url: /projects/subproject2/instruction1
 #     - title: Instruction 2
 #       url: /projects/subproject2/instruction2
-  subproject_dir: subproject2
+  # subproject_dir: subproject2'
 # Add more subprojects as needed
