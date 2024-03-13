@@ -1,15 +1,15 @@
-name: Fetch Repositories
-
+name: Copy Docs to GitHub Pages
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main 
+
+permissions: write-all
 
 jobs:
-  fetch_repos:
+  copy-docs:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
