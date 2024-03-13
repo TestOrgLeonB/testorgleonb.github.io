@@ -15,6 +15,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Install dependencies
+        run: pip install requests
+
       - name: Checkout GitHub Pages repository
         uses: actions/checkout@v2
         with:
