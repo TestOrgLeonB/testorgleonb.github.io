@@ -20,6 +20,7 @@ jobs:
         id: fetch_repos
         run: |
           repos=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/orgs/TestOrgLeonB/repos" | jq -r '.[] | select(.name != "testorgleonb.github.io") | .name')
+          echo "$repos"
           echo "::set-output name=repos::$repos"
 
       - name: Checkout and copy docs from each repository
