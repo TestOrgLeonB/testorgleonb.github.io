@@ -20,7 +20,7 @@ jobs:
         id: fetch_repos
         run: |
           repos=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/orgs/TestOrgLeonB/repos" | jq -r '.[] | select(.name != "testorgleonb.github.io") | .name')
-          echo "$repos"
+          echo "My $repos"
           echo "::set-output name=repos::$repos"
 
       - name: Checkout and copy docs from each repository
@@ -28,7 +28,7 @@ jobs:
           counter=1
           for repo in ${{ steps.fetch_repos.outputs.repos }}; do
             echo "Processing $repo"
-            echo "Process $counter"
+            echo "${{ steps.fetch_repos.outputs.repos }}"
             ((counter++))
             # Checkout repository
             #git clone --depth 1 --branch main https://github.com/TestOrgLeonB/$repo.git $repo
