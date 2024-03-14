@@ -4,12 +4,13 @@ title: Subproject1
 subproject: subproject1
 ---
 
+{% assign subproject_obj = site.data.projects[subproject1] %}
 
 <body>
     <div class="sidebar">
-        <li>{{ site.data.projects[subproject].title }}
+        <li>{{ subproject_obj.title }}
             <ul>
-                {% for instruction in site.data.projects[subproject].instructions %}
+                {% for instruction in subproject_obj.instructions %}
                     <li>
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
