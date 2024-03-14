@@ -7,20 +7,22 @@
     <title>{{ page.title }}</title>
 </head>
 <body>
-    <div class="sidebar">
-        <ul class="list-group">
-            {% for project in site.data.projects %}  
-                {% for subproject in project %}  
-                    {% if forloop.index0 | modulo: 2 == 0 %}
-                        <li class="list-group-item"><a href="{{subproject[0].project_root}}"> {{forloop.index0}}</a></li>
-                    {% endif %}
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                {% for project in site.data.projects %}  
+                    {% for subproject in project %}  
+                        {% if forloop.index0 | modulo: 2 == 0 %}
+                            <li class="nav-item"><a class="nav-link active" href="{{subproject[0].project_root}}"> {{forloop.index0}}</a></li>
+                        {% endif %}
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
+            </ul>
+        </div>
 
+    </nav>
 
-
-        </ul>
-    </div>
     <div class="content">
         {{ content }}
     </div>
