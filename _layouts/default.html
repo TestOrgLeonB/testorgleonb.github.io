@@ -10,15 +10,7 @@
     <div class="sidebar">
         <ul>
             {% for subproject in site.data.projects %}
-                <li>{{ subproject.title }}
-                    <ul>
-                        <li><a href="{{ subproject.project_root }}"> {{ instruction.title }}</a></li>
-
-                        <!-- {% for instruction in subproject.instructions %}
-                            <li><a href="{{ instruction.url }}"> {{ instruction.title }}</a></li>
-                        {% endfor %} -->
-                    </ul>
-                </li>
+                <li><a href="{{ subproject.project_root }}"> subproject.title</a></li>
             {% endfor %}
         </ul>
     </div>
