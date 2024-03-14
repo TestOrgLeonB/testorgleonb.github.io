@@ -10,7 +10,7 @@
     <div class="sidebar">
         <ul>
             {% for project in site.data.projects %}
-                {% for subproject in projects %}
+                {% for subproject in project %}
                     <li><a href="{{ subproject.project_root }}"> {{subproject.title}}</a></li>
                 {% endfor %}
             {% endfor %}
