@@ -13,7 +13,7 @@
             <div class="col-md-2" id="nav-container">
                 <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
                     <ul id="nav-list-ul">
-                        <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
                         {% for project in site.data.projects %}
                             {% for subproject in project %}
                                 {% assign remainder = forloop.index0 | modulo: 2 %}

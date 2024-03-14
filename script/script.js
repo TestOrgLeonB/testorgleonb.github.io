@@ -1,4 +1,4 @@
-var activeNavItem = $('.nav-link');
+var activeNavItem = $('.nav-item');
 
 activeNavItem.click(function(){
   activeNavItem.removeClass('active');
