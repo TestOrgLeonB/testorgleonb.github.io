@@ -1,32 +1,26 @@
 ---
 layout: default
 title: Subproject2 
+subproject: subproject2
 ---
 
 
 <body>
     <div class="sidebar">
-        <ul>
-            {% for subproject in site.data.projects %}
-                <li>{{ subproject.title }}
-                    <ul>
-                        {% for instruction in subproject.instructions %}
-                            <li>
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Card title</h5>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                      <a href="{{instruction.url}}" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>                            
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div class="content">
-        {{ content }}
+        <li>{{ subproject.title }}
+            <ul>
+                {% for instruction in subproject.instructions %}
+                    <li>
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{instruction}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="{{instruction.url}}" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>                            
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
     </div>
 </body>
