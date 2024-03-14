@@ -8,20 +8,22 @@
 </head>
 <body>
 
-        <div class="nav flex-column nav-pill">
-            <ul>
+        <div class="nav flex-column nav-pill" role="tablist" aria-orientation="vertical">
+            <!-- <ul>
                 
-                <li class="nav-link"><a  href="/"> Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/"> Home</a></li> -->
 
                 {% for project in site.data.projects %}  
                     {% for subproject in project %}  
                         {% assign remainder = forloop.index0 | modulo: 2 %}
                         {% if remainder == 1 %}
-                            <li class="nav-link"><a href="{{subproject[0].project_root}}"> {{subproject[0].title}}</a></li>
+                            <a class="nav-link" data-toggle="pill" role="tab" href="{{subproject[0].project_root}}"> {{subproject[0].title}}</a>
+
+                            <!-- <li class="nav-item"><a class="nav-link" href="{{subproject[0].project_root}}"> {{subproject[0].title}}</a></li> -->
                         {% endif %}
                     {% endfor %}
                 {% endfor %}
-            </ul>
+            <!-- </ul> -->
         </div>
 
 
