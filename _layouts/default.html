@@ -7,22 +7,23 @@
     <title>{{ page.title }}</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
 
-        <div class="container-fluid">
-            <ul class="nav flex-column">
+        <div class="nav flex-column nav-pill">
+            <ul>
+                
+                <li class="nav-link"><a  href="/"> Home</a></li>
+
                 {% for project in site.data.projects %}  
                     {% for subproject in project %}  
                         {% assign remainder = forloop.index0 | modulo: 2 %}
                         {% if remainder == 1 %}
-                            <li class="nav-item"><a class="nav-link active" href="{{subproject[0].project_root}}"> {{subproject[0].title}}</a></li>
+                            <li class="nav-link"><a href="{{subproject[0].project_root}}"> {{subproject[0].title}}</a></li>
                         {% endif %}
                     {% endfor %}
                 {% endfor %}
             </ul>
         </div>
 
-    </nav>
 
     <div class="content">
         {{ content }}
