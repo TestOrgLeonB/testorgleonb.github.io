@@ -12,7 +12,7 @@
                 <li>{{ subproject.title }}
                     <ul>
                         {% for instruction in subproject.instructions %}
-                            <li><a href="/testorgleonb.github.io/_projects/subproject1/instruction1.md">{{ instruction.title }}</a></li>
+                            <li><a href="{{ instruction.url }}"> {{ instruction.title }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
