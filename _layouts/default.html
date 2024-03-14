@@ -11,7 +11,8 @@
         <ul>
             {% for project in site.data.projects %}
                 {% for subproject in project %}
-                    <li><a href="{{ subproject.project_root }}"> {{subproject[0].title}}</a></li>
+                
+                    <li><a href="{{ subproject[0].project_root }}"> {{subproject[0].title}}</a></li>
                 {% endfor %}
             {% endfor %}
 
