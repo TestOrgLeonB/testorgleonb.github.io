@@ -1,19 +1,27 @@
-# _data/projects.yml
 subproject1:
-  - title: Subproject 1
-    project_root: /projects/subproject1/subproject1.html
-    instructions:
-      - title: Instruction 1
-        url: /projects/subproject1/instruction1
-      - title: Instruction 2
-        url: /projects/subproject1/instruction2
-    subproject_dir: subproject1
+- instructions:
+  - title: Instruction 1
+    url: /projects/subproject1/instruction1
+  - title: Instruction 2
+    url: /projects/subproject1/instruction2
+  project_root: /projects/subproject1/subproject1.html
+  subproject_dir: subproject1
+  title: Subproject 1
 subproject2:
-  - title: Subproject 2
-    project_root: /projects/subproject2/subproject2.html
-    instructions:
-      - title: Instruction 1
-        url: /projects/subproject2/instruction1
-      - title: Instruction 2
-        url: /projects/subproject2/instruction2
-    subproject_dir: subproject2
+- instructions:
+  - title: Instruction 1
+    url: /projects/subproject2/instruction1
+  - title: Instruction 2
+    url: /projects/subproject2/instruction2
+  project_root: /projects/subproject2/subproject2.html
+  subproject_dir: subproject2
+  title: Subproject 2
+subproject3:
+- instructions:
+  - title: Instruction 1
+    url: /projects/subproject3/instruction1
+  - title: Instruction 2
+    url: /projects/subproject3/instruction2
+  project_root: /projects/subproject3/subproject3.html
+  subproject_dir: subproject3
+  title: Subproject subproject3
