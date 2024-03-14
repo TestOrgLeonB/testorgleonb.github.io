@@ -10,12 +10,12 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
 
         <div class="container-fluid">
-            <ul class="navbar-nav">
+            <ul class="nav flex-column">
                 {% for project in site.data.projects %}  
                     {% for subproject in project %}  
                         {% assign remainder = forloop.index0 | modulo: 2 %}
-                        {% if remainder == 0 %}
-                            <li class="nav-item"><a class="nav-link active" href="{{subproject[0].project_root}}"> {{forloop.index0}}</a></li>
+                        {% if remainder == 1 %}
+                            <li class="nav-item"><a class="nav-link active" href="{{subproject[0].project_root}}"> {{subproject[0].title}}</a></li>
                         {% endif %}
                     {% endfor %}
                 {% endfor %}
