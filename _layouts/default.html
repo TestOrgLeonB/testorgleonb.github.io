@@ -8,12 +8,11 @@
 </head>
 <body>
     <div class="sidebar">
-        <ul>
-            {% assign counter = 0 %}
+        <ul class="list-group">
             {% for project in site.data.projects %}  
                 {% for subproject in project %}  
                     {% if forloop.index0 | modulo: 2 == 0 %}
-                        <li><a href="{{subproject[0].project_root}}"> {{subproject[0].title}}</a></li>
+                        <li class="list-group-item"><a href="{{subproject[0].project_root}}"> {{forloop.index0}}</a></li>
                     {% endif %}
                 {% endfor %}
             {% endfor %}
