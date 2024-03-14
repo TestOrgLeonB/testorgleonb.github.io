@@ -3,3 +3,7 @@ ul{
     list-style: none;
 
 }
+
+#nav-container {
+    background-color: "##EE2375";
+}
