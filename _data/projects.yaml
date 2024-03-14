@@ -1,4 +1,5 @@
 # _data/projects.yml
+subproject1:
 - title: Subproject 1
   project_root: /projects/subproject1/subproject1.html
   instructions:
@@ -7,7 +8,7 @@
     - title: Instruction 2
       url: /projects/subproject1/instruction2
   subproject_dir: subproject1
-
+subproject2:
 - title: Subproject 2
   project_root: /projects/subproject2/subproject2.html
   instructions:
