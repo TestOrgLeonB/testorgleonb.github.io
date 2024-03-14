@@ -1,14 +1,15 @@
 ---
 layout: default
-title: Subproject2 
+title: Subproject1 
+subproject: subproject2
 ---
 
 
 <body>
     <div class="sidebar">
-        <li>{{ subproject1.title }}
+        <li>{{ site.data.projects[subproject].title }}
             <ul>
-                {% for instruction in subproject2.instructions %}
+                {% for instruction in site.data.projects[subproject].instructions %}
                     <li>
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
