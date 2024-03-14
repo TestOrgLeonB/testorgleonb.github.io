@@ -13,7 +13,8 @@
             <ul class="navbar-nav">
                 {% for project in site.data.projects %}  
                     {% for subproject in project %}  
-                        {% if forloop.index0 | modulo: 2 == 0 %}
+                        {% assign remainder = forloop.index0 | modulo: 2 %}
+                        {% if remainder == 0 %}
                             <li class="nav-item"><a class="nav-link active" href="{{subproject[0].project_root}}"> {{forloop.index0}}</a></li>
                         {% endif %}
                     {% endfor %}
