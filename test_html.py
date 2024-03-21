@@ -33,19 +33,23 @@ title: {subproject_name}
 # generate_html_file("subproject3")
 
 
-def add_subproject(subproject_name):
+def add_subproject(subproject_name, markdown_files):
     # Load existing data from projects.yaml
-    with open('testorgleonb.github.io/_data/projects.yaml', 'r') as file:
+    with open('_data/projects.yaml', 'r') as file:
         data = yaml.safe_load(file)
+
+    # Generate instructions based on markdownFiles
+    instructions = []
+    for markdown_file in markdown_files:
+        instruction_title = markdown_file.split('.')[0]  # Remove file extension
+        instruction_url = f'/projects/{subproject_name}/{instruction_title}'
+        instructions.append({'title': instruction_title, 'url': instruction_url})
 
     # Generate subproject data
     subproject_data = {
         'title': f'Subproject {subproject_name}',
         'project_root': f'/projects/{subproject_name}/{subproject_name}.html',
-        'instructions': [
-            {'title': 'Instruction 1', 'url': f'/projects/{subproject_name}/instruction1'},
-            {'title': 'Instruction 2', 'url': f'/projects/{subproject_name}/instruction2'}
-        ],
+        'instructions': instructions,
         'subproject_dir': subproject_name
     }
 
@@ -53,8 +57,9 @@ def add_subproject(subproject_name):
     data[subproject_name] = [subproject_data]
 
     # Write updated data back to projects.yaml
-    with open('testorgleonb.github.io/_data/projects.yaml', 'w') as file:
+    with open('_data/projects.yaml', 'w') as file:
         yaml.dump(data, file)
 
 # Example usage:
-add_subproject('subproject4')
+markdown_files = ['instruction1.md', 'instruction2.md','instruction3.md']  # Example list of instruction markdown files
+add_subproject('subproject3', markdown_files)

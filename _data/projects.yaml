@@ -1,27 +1,16 @@
-subproject1:
+TestRep1:
 - instructions:
-  - title: Instruction 1
-    url: /projects/subproject1/instruction1
-  - title: Instruction 2
-    url: /projects/subproject1/instruction2
-  project_root: /projects/subproject1/subproject1.html
-  subproject_dir: subproject1
-  title: Subproject 1
-subproject2:
+  - title: projects/TestRep1/step1_random/step1rand
+    url: /projects/TestRep1/projects/TestRep1/step1_random/step1rand
+  - title: projects/TestRep1/step1_random/sub_step/subStep
+    url: /projects/TestRep1/projects/TestRep1/step1_random/sub_step/subStep
+  project_root: /projects/TestRep1/TestRep1.html
+  subproject_dir: TestRep1
+  title: Subproject TestRep1
+TestRep2:
 - instructions:
-  - title: Instruction 1
-    url: /projects/subproject2/instruction1
-  - title: Instruction 2
-    url: /projects/subproject2/instruction2
-  project_root: /projects/subproject2/subproject2.html
-  subproject_dir: subproject2
-  title: Subproject 2
-subproject3:
-- instructions:
-  - title: Instruction 1
-    url: /projects/subproject3/instruction1
-  - title: Instruction 2
-    url: /projects/subproject3/instruction2
-  project_root: /projects/subproject3/subproject3.html
-  subproject_dir: subproject3
-  title: Subproject subproject3
+  - title: projects/TestRep2/01_begin/01_begin
+    url: /projects/TestRep2/projects/TestRep2/01_begin/01_begin
+  project_root: /projects/TestRep2/TestRep2.html
+  subproject_dir: TestRep2
+  title: Subproject TestRep2
