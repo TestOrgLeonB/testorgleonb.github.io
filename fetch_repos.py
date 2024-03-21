@@ -101,7 +101,7 @@ def add_subproject(subproject_name, markdown_files):
     # Generate instructions based on markdownFiles
     instructions = []
     for markdown_file in markdown_files:
-        instruction_title = markdown_file.split('.')[0]  # Remove file extension
+        instruction_title = (markdown_file.split('/')[-1]).removesuffix(".md")  # Remove file extension
         instruction_url = f'/projects/{subproject_name}/{instruction_title}'
         instructions.append({'title': instruction_title, 'url': instruction_url})
 
@@ -130,7 +130,7 @@ if __name__ == "__main__":
     # token = sys.argv[2]
 
     org_name="TestOrgLeonB"
-    token = "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"
+    token="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"
 
     repositories = fetch_repositories(org_name, token)
     if repositories:
