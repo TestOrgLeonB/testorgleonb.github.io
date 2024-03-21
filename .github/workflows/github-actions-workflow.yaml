@@ -1,8 +1,10 @@
 name: Copy Docs to GitHub Pages
-on:
-  push:
-    branches:
-      - main 
+push:
+  branches:
+    - main
+  paths:
+    - 'TestRep1/doc/**'
+    - 'TestRep2/doc/**'
 
 permissions: write-all
 
@@ -16,19 +18,20 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install requests
 
-      - name: Checkout GitHub Pages repository
-        uses: actions/checkout@v2
-        with:
-          repository: TestOrgLeonB/testorgleonb.github.io
-          token: ${{ secrets.GITHUB_TOKEN }}
+      run: pip install requests
 
-      - name: Fetch repositories
-        id: fetch_repos
-        run: |
-          python fetch_repos.py TestOrgLeonB ${{ secrets.GITHUB_TOKEN }}
-        continue-on-error: true
+      # - name: Checkout GitHub Pages repository
+      #   uses: actions/checkout@v2
+      #   with:
+      #     repository: TestOrgLeonB/testorgleonb.github.io
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+
+      # - name: Fetch repositories
+      #   id: fetch_repos
+      #   run: |
+      #     python fetch_repos.py TestOrgLeonB ${{ secrets.GITHUB_TOKEN }}
+      #   continue-on-error: true
 
 
 # name: Copy Docs to GitHub Pages
