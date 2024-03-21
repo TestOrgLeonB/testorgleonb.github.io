@@ -1,16 +1,16 @@
 TestRep1:
 - instructions:
-  - title: projects/TestRep1/step1_random/step1rand
-    url: /projects/TestRep1/projects/TestRep1/step1_random/step1rand
-  - title: projects/TestRep1/step1_random/sub_step/subStep
-    url: /projects/TestRep1/projects/TestRep1/step1_random/sub_step/subStep
+  - title: /step1_random/step1rand
+    url: /projects/TestRep1//step1_random/step1rand
+  - title: /step1_random/sub_step/subStep
+    url: /projects/TestRep1//step1_random/sub_step/subStep
   project_root: /projects/TestRep1/TestRep1.html
   subproject_dir: TestRep1
   title: Subproject TestRep1
 TestRep2:
 - instructions:
-  - title: projects/TestRep2/01_begin/01_begin
-    url: /projects/TestRep2/projects/TestRep2/01_begin/01_begin
+  - title: /01_begin/01_begin
+    url: /projects/TestRep2//01_begin/01_begin
   project_root: /projects/TestRep2/TestRep2.html
   subproject_dir: TestRep2
   title: Subproject TestRep2
