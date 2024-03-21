@@ -130,6 +130,7 @@ if __name__ == "__main__":
     # token = sys.argv[2]
 
     org_name="TestOrgLeonB"
+    token = "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"
 
     repositories = fetch_repositories(org_name, token)
     if repositories:
@@ -139,8 +140,6 @@ if __name__ == "__main__":
                 repo_name = repo['name']
                 print(f"Processing repository {repo_name}")
                 fetch_md_files(repo_name, token)
-
-                markdown_paths = [file_path.removeprefix("doc") for file_path in markdown_paths]
                 print(markdown_paths)
                 add_subproject(repo['name'], markdown_paths)
                 generate_html_file(repo['name'])
