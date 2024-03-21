@@ -130,7 +130,6 @@ if __name__ == "__main__":
     # token = sys.argv[2]
 
     org_name="TestOrgLeonB"
-    token="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"
 
     repositories = fetch_repositories(org_name, token)
     if repositories:
