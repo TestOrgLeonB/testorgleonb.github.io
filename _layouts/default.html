@@ -10,39 +10,26 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2" id="nav-container">
-                <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
-                    <ul id="nav-list-ul">
-                        <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+            <div class="col-md-2">
+                <div class="card-deck">
+                
                         {% for project in site.data.projects %}
                             {% for subproject in project %}
                                 {% assign remainder = forloop.index0 | modulo: 2 %}
                                 {% if remainder == 1 %}
 
-                                    <body>
-                                        <div class="card-deck">
                                                 <div class="card" style="width: 18rem;">
                                                     <div class="card-body">
                                                         <h5 class="card-title">{{ subproject[0].title }}</h5>
                                                         <a href="{{ instruction.url }}" class="btn btn-primary">Read More</a>
                                                     </div>
                                                 </div>
-                                        </div>
-                                    </body>
                                 
-                                    <!-- <li class="nav-item">
-                                        <a class="nav-link" href="{{ subproject[0].project_root }}">{{ subproject[0].title }}</a>
-                                    </li> -->
+                
                                 {% endif %}
                             {% endfor %}
                         {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-10">
-                <div class="content">
-                    {{ content }}
-                </div>
+                    </div>
             </div>
         </div>
     </div>
