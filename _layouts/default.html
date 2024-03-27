@@ -18,9 +18,21 @@
                             {% for subproject in project %}
                                 {% assign remainder = forloop.index0 | modulo: 2 %}
                                 {% if remainder == 1 %}
-                                    <li class="nav-item">
+
+                                    <body>
+                                        <div class="card-deck">
+                                                <div class="card" style="width: 18rem;">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">{{ subproject[0].title }}</h5>
+                                                        <a href="{{ instruction.url }}" class="btn btn-primary">Read More</a>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </body>
+                                
+                                    <!-- <li class="nav-item">
                                         <a class="nav-link" href="{{ subproject[0].project_root }}">{{ subproject[0].title }}</a>
-                                    </li>
+                                    </li> -->
                                 {% endif %}
                             {% endfor %}
                         {% endfor %}
