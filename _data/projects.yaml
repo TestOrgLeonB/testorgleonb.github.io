@@ -1,16 +1,6 @@
 TestRep1:
-- instructions:
-  - title: step1rand
-    url: /projects/TestRep1/doc/step1_random/step1rand.md
-  - title: subStep
-    url: /projects/TestRep1/doc/step1_random/sub_step/subStep.md
-  project_root: /projects/TestRep1/TestRep1.html
-  subproject_dir: TestRep1
+  url: www.google.com
   title: Subproject TestRep1
 TestRep2:
-- instructions:
-  - title: 01_begin
-    url: /projects/TestRep2/doc/01_begin/01_begin.md
-  project_root: /projects/TestRep2/TestRep2.html
-  subproject_dir: TestRep2
+  url: www.google.com
   title: Subproject TestRep2
