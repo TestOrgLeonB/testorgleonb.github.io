@@ -1,6 +1,8 @@
 TestRep1:
-  url: www.google.com
+  url: https://www.google.com
+  icon: android
   title: Subproject TestRep1
 TestRep2:
-  url: www.google.com
+  url: https://www.google.com
+  icon: at
   title: Subproject TestRep2
