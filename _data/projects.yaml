@@ -1,10 +1,10 @@
 TestRep1:
-  icon: fa-xl fa-bath
+  icon: fa fa-xl fa-bath
   title: Subproject TestRep1
   url: https://www.google.com
   description: This is the tool used for making other cool SW
 TestRep2:
-  icon: fa-2xl fa-cloud
+  icon: fa fa-2xl fa-cloud
   title: Subproject TestRep2
   url: https://www.google.com
   description:
