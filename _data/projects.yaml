@@ -1,8 +1,8 @@
 TestRep1:
-  icon: shower
+  icon: fa fa-bath
   title: Subproject TestRep1
   url: https://www.google.com
 TestRep2:
-  icon: automobile
+  icon: fa-cloud
   title: Subproject TestRep2
   url: https://www.google.com
