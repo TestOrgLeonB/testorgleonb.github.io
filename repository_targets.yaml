@@ -1,2 +1,1 @@
-TestRep1
-TestRep2
+repositories: ["TestRep1", "TestRep2"]

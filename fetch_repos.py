@@ -5,19 +5,19 @@ markdown_paths = []
 
 org_name="TestOrgLeonB"
 
-def fetch_repositories(org_name, token):
-    headers = {
-        'Authorization': f'token {token}',
-        'Accept': 'application/vnd.github.v3+json'
-    }
-    url = f'https://api.github.com/orgs/{org_name}/repos'
-    response = requests.get(url, headers=headers)
-    if response.status_code == 200:
-        return response.json()
-    else:
-        print(f"Failed to fetch repositories. Status code: {response.status_code}")
-        return None
-
+def fetch_repositories(filename="repository_targets.yaml"):
+    try:
+        with open(filename, "r") as file:
+            data = yaml.safe_load(file)
+            repositories = data.get("repositories", [])
+            return repositories
+    except FileNotFoundError:
+        print(f"Error: File '{filename}' not found.")
+        return []
+    except yaml.YAMLError as e:
+        print(f"Error: Failed to parse YAML from '{filename}': {e}")
+        return []
+    
 def fetch_yaml_conf(repo_name, token):
     try:
         headers = {
@@ -91,13 +91,14 @@ if __name__ == "__main__":
     # token = sys.argv[2]
 
 
-    repositories = fetch_repositories(org_name, token)
+    repositories = fetch_repositories()
     if repositories:
         for repo in repositories:
-            if repo['name'] != "testorgleonb.github.io":
-                markdown_paths = []
-                repo_name = repo['name']
-                print(f"Processing repository {repo_name}")
-                project_conf = fetch_yaml_conf(repo_name, token)
-                add_subproject(repo_name, project_conf)
+            if repo != "testorgleonb.github.io":
+                print(repo)
+                #     markdown_paths = []
+                # repo_name = repo['name']
+                # print(f"Processing repository {repo_name}")
+                # project_conf = fetch_yaml_conf(repo_name, token)
+                # add_subproject(repo_name, project_conf)
              
