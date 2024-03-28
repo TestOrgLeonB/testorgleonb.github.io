@@ -19,13 +19,25 @@
                                 {% assign remainder = forloop.index0 | modulo: 2 %}
                                 {% if remainder == 1 %}
 
-                                                <div class="card" style="width: 18rem;">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">{{ subproject.title }}</h5>
-                                                        <i class="{{subproject.icon}}"></i>
-                                                        <a href="{{ subproject.url }}" class="btn btn-primary">Read More</a>
-                                                    </div>
-                                                </div>
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h5 class="card-title">{{ subproject.title }}</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row icon-row">
+                                            <div class="col-lg-6">
+                                                <i class="{{subproject.icon}}"></i>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <a href="{{ subproject.url }}" class="btn btn-primary">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 
                 
                                 {% endif %}
