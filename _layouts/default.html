@@ -10,9 +10,8 @@
 </head>
 <body>
     <div class="container-fluid">
-
+        <h1 class="text-center mb-4">HELP ARTICLES</h1>
             <div class="row">
-                <h1 class="text-center mb-4">HELP ARTICLES</h1>
                 {% for project in site.data.projects %}
                     {% for subproject in project %}
                         {% assign remainder = forloop.index0 | modulo: 2 %}
@@ -26,12 +25,14 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-lg-6">
+                                            <div class="col">
                                                 <div class="text-center mb-3">
                                                     <i class="{{subproject.icon}}" style="font-size: 4rem;"></i>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
                                                 <p class="card-text">{{subproject.description}}</p>
                                             </div>
                                         </div>
