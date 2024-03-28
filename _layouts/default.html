@@ -11,7 +11,7 @@
 <body>
     <div class="container-fluid">
         <h1 class="text-center mb-4">HELP ARTICLES</h1>
-            <div class="row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
                 {% for project in site.data.projects %}
                     {% for subproject in project %}
                         {% assign remainder = forloop.index0 | modulo: 2 %}
@@ -19,17 +19,18 @@
                             <div class="col">
                             <!-- <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 mb-4"> -->
                                 <div class="card align-items-stretch" style="margin-top: 1vh;">
-                                    <div class="row card-img-top">
-                                        <div class="col">
-                                            <div class="text-center mb-3">
-                                                <i class="{{subproject.icon}}" style="font-size: 4rem;"></i>
-                                            </div>
-                                        </div>
-                                    </div>
+                                
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col">
                                                 <h3 class="card-title">{{ subproject.title }}</h3>
+                                            </div>
+                                        </div>
+                                        <div class="row card-img-top">
+                                            <div class="col">
+                                                <div class="text-center mb-3">
+                                                    <i class="{{subproject.icon}}" style="font-size: 4rem;"></i>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -37,7 +38,7 @@
                                                 <p class="card-text">{{subproject.description}}</p>
                                             </div>
                                         </div>
-                                        <div class="row justify-content-end">
+                                        <div class="row"  style="display: flex; justify-content: flex-end;">
                                             <div class="col">
                                                 <a href="{{ subproject.url }}" class="btn btn-primary" style="background-color: #EE2375;">Read More</a>
                                             </div>
