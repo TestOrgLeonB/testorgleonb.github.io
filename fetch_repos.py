@@ -58,7 +58,7 @@ def fetch_yaml_conf(repo_name, token):
 
 def add_subproject(subproject_name, subproject_conf):
     # Load existing data from projects.yaml
-    with open('testorgleonb.github.io/_data/projects.yaml', 'r') as file:
+    with open('_data/projects.yaml', 'r') as file:
         data = yaml.safe_load(file)
 
 
@@ -77,7 +77,7 @@ def add_subproject(subproject_name, subproject_conf):
     else:
         data = {subproject_name: subproject_data}
     # Write updated data back to projects.yaml
-    with open('testorgleonb.github.io/_data/projects.yaml', 'w') as file:
+    with open('_data/projects.yaml', 'w') as file:
         yaml.dump(data, file)
 
 
