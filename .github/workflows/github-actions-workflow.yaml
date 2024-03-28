@@ -15,9 +15,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip3 install -r requirements.txt; 
-
-
+        run: pip3 install -r testorgleonb.github.io/requirements.txt; 
 
       - name: Checkout GitHub Pages repository
         uses: actions/checkout@v2
