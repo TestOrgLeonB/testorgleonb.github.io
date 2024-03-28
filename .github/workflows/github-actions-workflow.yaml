@@ -1,7 +1,7 @@
 name: Copy Docs to GitHub Pages
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/3 * * * *"
 
 permissions: write-all
 
