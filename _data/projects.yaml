@@ -12,12 +12,12 @@ TestRep3:
   icon: fa fa-cloud
   title: Subproject TestRep2
   url: https://www.google.com
-  description: FAQ
+  description:  This is the tool used for making other cool SW and I believe it will help create many other great tools
 TestRep4:
   icon: fa fa-bath
   title: Subproject TestRep1
   url: https://www.google.com
-  description: This is the tool used for making other cool SW
+  description: For further information please check out the shop
 TestRep5:
   icon: fa fa-cloud
   title: Subproject TestRep2
