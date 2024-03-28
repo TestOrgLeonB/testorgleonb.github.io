@@ -19,16 +19,21 @@
                                 {% assign remainder = forloop.index0 | modulo: 2 %}
                                 {% if remainder == 1 %}
 
-                                <div class="card" style="width: 18rem;">
+                                <div class="card" style="width: 9rem;">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col">
-                                                <h5 class="card-title">{{ subproject.title }}</h5>
+                                                <h3 class="card-title">{{ subproject.title }}</h3>
                                             </div>
                                         </div>
                                         <div class="row icon-row">
                                             <div class="col-lg-6">
                                                 <i class="{{subproject.icon}}"></i>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="card-text">{{subproject.description}}</p>
                                             </div>
                                         </div>
                                         <div class="row">

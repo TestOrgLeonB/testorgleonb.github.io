@@ -38,11 +38,14 @@ def fetch_yaml_conf(repo_name, token):
             url = yaml_content.get('url')
             icon = yaml_content.get('icon')
             title = yaml_content.get('title')
+            description = yaml_content.get('description')
+
 
             return (
                     title,
                     icon,
-                    url
+                    url,
+                    description
                 )
         else:
             print(f"Failed to fetch doc_conf.yaml: {response.status_code} - {response.text}")
@@ -65,7 +68,8 @@ def add_subproject(subproject_name, subproject_conf):
     subproject_data = {
         'title': subproject_conf[0],
         'icon': subproject_conf[1] ,
-        'url': subproject_conf[2]
+        'url': subproject_conf[2],
+        'description': subproject_conf[3]
     }
 
     # Add subproject to data
@@ -86,7 +90,6 @@ if __name__ == "__main__":
     # org_name = sys.argv[1]
     # token = sys.argv[2]
 
-    token="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"
 
     repositories = fetch_repositories(org_name, token)
     if repositories:
