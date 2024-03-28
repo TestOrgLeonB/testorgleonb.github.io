@@ -1,8 +1,8 @@
 TestRep1:
-  url: https://www.google.com
-  icon: android
+  icon: shower
   title: Subproject TestRep1
-TestRep2:
   url: https://www.google.com
-  icon: at
+TestRep2:
+  icon: automobile
   title: Subproject TestRep2
+  url: https://www.google.com
