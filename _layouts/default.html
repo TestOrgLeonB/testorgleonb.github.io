@@ -16,8 +16,8 @@
                     {% for subproject in project %}
                         {% assign remainder = forloop.index0 | modulo: 2 %}
                         {% if remainder == 1 %}
-                            <div class="col-lg-4">
-                                <div class="card" style="width: 18rem;">
+                            <div class="col-lg-3">
+                                <div class="card" style="width: 18rem; margin-top: 1vh;">
                                     <div class="card-body" style="display: flex; flex-direction: column; height: 100%;">
                                         <div class="row" style="flex: 20%">
                                             <div class="col">
@@ -36,7 +36,7 @@
                                         </div>
                                         <div class="row" style="flex: 20%">
                                             <div class="col" style="display: flex; justify-content: flex-end; height: 10vh;">
-                                                <a href="{{ subproject.url }}" class="btn btn-primary btn-lg" style="background-color: #EE2375;">Read More</a>
+                                                <a href="{{ subproject.url }}" class="btn btn-primary" style="background-color: #EE2375; height: 10vh;">Read More</a>
                                             </div>
                                         </div>
                                     </div>
