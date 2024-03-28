@@ -94,7 +94,6 @@ if __name__ == "__main__":
     if repositories:
         for repo_name in repositories:
             if repo_name != "testorgleonb.github.io":
-                print(repo)
                 print(f"Processing repository {repo_name}")
                 project_conf = fetch_yaml_conf(repo_name, token)
                 add_subproject(repo_name, project_conf)
