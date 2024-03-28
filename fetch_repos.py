@@ -1,7 +1,6 @@
 import requests
 import yaml
 
-markdown_paths = []
 
 org_name="TestOrgLeonB"
 
@@ -83,12 +82,12 @@ def add_subproject(subproject_name, subproject_conf):
 
 
 if __name__ == "__main__":
-    # if len(sys.argv) != 3:
-    #     print("Usage: python fetch_repos.py <organization_name> <GitHub_token>")
-    #     sys.exit(1)
+    if len(sys.argv) != 3:
+        print("Usage: python fetch_repos.py <organization_name> <GitHub_token>")
+        sys.exit(1)
 
-    # org_name = sys.argv[1]
-    # token = sys.argv[2]
+    org_name = sys.argv[1]
+    token = sys.argv[2]
 
 
     repositories = fetch_repositories()
@@ -96,9 +95,8 @@ if __name__ == "__main__":
         for repo in repositories:
             if repo != "testorgleonb.github.io":
                 print(repo)
-                #     markdown_paths = []
-                # repo_name = repo['name']
-                # print(f"Processing repository {repo_name}")
-                # project_conf = fetch_yaml_conf(repo_name, token)
-                # add_subproject(repo_name, project_conf)
+                repo_name = repo['name']
+                print(f"Processing repository {repo_name}")
+                project_conf = fetch_yaml_conf(repo_name, token)
+                add_subproject(repo_name, project_conf)
              

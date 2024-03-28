@@ -1,12 +1,7 @@
 name: Copy Docs to GitHub Pages
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'TestRep1/doc/doc_config.yaml'
-      - 'TestRep2/doc/doc_config.yaml'
-      - '.github/workflows/update_doc_config.yaml' 
+  schedule:
+    - cron: "*/10 * * * *"
 
 permissions: write-all
 
@@ -26,11 +21,11 @@ jobs:
 
 
 
-      # - name: Checkout GitHub Pages repository
-      #   uses: actions/checkout@v2
-      #   with:
-      #     repository: TestOrgLeonB/testorgleonb.github.io
-      #     token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout GitHub Pages repository
+        uses: actions/checkout@v2
+        with:
+          repository: TestOrgLeonB/testorgleonb.github.io
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Fetch repositories
         id: fetch_repos
