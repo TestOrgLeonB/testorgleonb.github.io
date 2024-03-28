@@ -17,31 +17,22 @@
                         {% assign remainder = forloop.index0 | modulo: 2 %}
                         {% if remainder == 1 %}
                             <!-- <div class="col"> -->
-                            <div class="col-lg-3 col-md-4 col-sm-8 col-xs-8 mb-1">
-                                <div class="card h-100" style="margin-top: 1vh;">
+                                <div class="card h-100 col-lg-3 col-md-4 col-sm-12 col-xs-12" style="margin-top: 1vh;">
                                 
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col">
                                                 <h3 class="card-title">{{ subproject.title }}</h3>
-                                            </div>
                                         </div>
                                         <div class="row card-img-top">
-                                            <div class="col">
                                                 <div class="text-center mb-3">
                                                     <i class="{{subproject.icon}}" style="font-size: 4rem;"></i>
                                                 </div>
-                                            </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col">
                                                 <p class="card-text">{{subproject.description}}</p>
-                                            </div>
                                         </div>
                                         <div class="row"  style="display: flex; justify-content: flex-end;">
-                                            <div class="col">
                                                 <a href="{{ subproject.url }}" class="btn btn-primary" style="background-color: #EE2375;">Read More</a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
