@@ -19,8 +19,8 @@
                                 {% if remainder == 1 %}
 
                                 <div class="card" style="width: 18rem;">
-                                    <div class="card-body" style="flex: 20%">
-                                        <div class="row">
+                                    <div class="card-body" style="display: flex; flex-direction: column; height: 100%;">
+                                        <div class="row" style="flex: 20%">
                                             <div class="col">
                                                 <h3 class="card-title">{{ subproject.title }}</h3>
                                             </div>
@@ -36,7 +36,7 @@
                                             </div>
                                         </div>
                                         <div class="row" style="flex: 20%">
-                                            <div class="col">
+                                            <div class="col"  style="display: flex; justify-content: flex-end;">
                                                 <a href="{{ subproject.url }}" class="btn btn-primary" style="background-color: #EE2375;">Read More</a>
                                             </div>
                                         </div>
