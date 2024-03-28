@@ -16,19 +16,19 @@
                     {% for subproject in project %}
                         {% assign remainder = forloop.index0 | modulo: 2 %}
                         {% if remainder == 1 %}
-                            <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+                            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 mb-4 align-items-stretch">
                                 <div class="card" style="margin-top: 1vh;">
+                                    <div class="row card-img-top">
+                                        <div class="col">
+                                            <div class="text-center mb-3">
+                                                <i class="{{subproject.icon}}" style="font-size: 4rem;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col">
                                                 <h3 class="card-title">{{ subproject.title }}</h3>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="text-center mb-3">
-                                                    <i class="{{subproject.icon}}" style="font-size: 4rem;"></i>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="row">
