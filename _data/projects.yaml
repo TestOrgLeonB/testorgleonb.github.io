@@ -9,10 +9,10 @@ TestRep2:
   url: https://www.google.com
   description: FAQ
 TestRep3:
-icon: fa fa-cloud
-title: Subproject TestRep2
-url: https://www.google.com
-description: FAQ
+  icon: fa fa-cloud
+  title: Subproject TestRep2
+  url: https://www.google.com
+  description: FAQ
 TestRep4:
   icon: fa fa-bath
   title: Subproject TestRep1
@@ -24,7 +24,7 @@ TestRep5:
   url: https://www.google.com
   description: FAQ
 TestRep6:
-icon: fa fa-cloud
-title: Subproject TestRep2
-url: https://www.google.com
-description: FAQ
+  icon: fa fa-cloud
+  title: Subproject TestRep2
+  url: https://www.google.com
+  description: FAQ
