@@ -11,13 +11,13 @@
 <body>
     <div class="container-fluid">
         <h1 class="text-center mb-4">HELP ARTICLES</h1>
-            <div class="row row-cols-1 row-cols-md-4 row-cols-lg-3 g-3">
+            <div class="row">
                 {% for project in site.data.projects %}
                     {% for subproject in project %}
                         {% assign remainder = forloop.index0 | modulo: 2 %}
                         {% if remainder == 1 %}
-                            <div class="col">
-                            <!-- <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 mb-4"> -->
+                            <!-- <div class="col"> -->
+                            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 mb-4">
                                 <div class="card h-100" style="margin-top: 1vh;">
                                 
                                     <div class="card-body">
