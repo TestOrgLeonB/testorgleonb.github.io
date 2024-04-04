@@ -1,32 +1,42 @@
-# name: Copy Docs to GitHub Pages
-# # on:
-# #   schedule:
-# #     - cron: "*/5 * * * *"
+name: Copy Docs to GitHub Pages
+on:
+  schedule:
+    - cron: "*/5 * * * *"
 
-# permissions: write-all
+permissions: write-all
 
-# jobs:
-#   copy-docs:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Set up Python
-#         uses: actions/setup-python@v2
-#         with:
-#           python-version: '3.x'
+jobs:
+  copy-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
 
-#       - name: Checkout GitHub Pages repository
-#         uses: actions/checkout@v2
-#         with:
-#           repository: TestOrgLeonB/testorgleonb.github.io
-#           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout GitHub Pages repository
+        uses: actions/checkout@v2
+        with:
+          repository: TestOrgLeonB/testorgleonb.github.io
+          token: ${{ secrets.GITHUB_TOKEN }}
       
-#       - name: Install dependencies
-#         run: pip3 install -r requirements.txt; 
+      - name: Install dependencies
+        run: pip3 install -r requirements.txt; 
 
 
-#       - name: Fetch repositories
-#         id: fetch_repos
-#         run: |
-#           python fetch_repos.py TestOrgLeonB ${{ secrets.GITHUB_TOKEN }}
-#         continue-on-error: true
+      - name: Fetch repositories
+        id: fetch_repos
+        run: |
+          python fetch_repos.py TestOrgLeonB ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+
+      - name: Commit Changes
+        run: |
+          git add _data/projects.yaml
+          git commit -m "Add changes to projects data"
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
