@@ -1,30 +1,31 @@
 TestRep1:
-  icon: fa fa-bath
+  description: null
+  icon: android
   title: Subproject TestRep1
-  url: https://www.google.com
-  description: This is the tool used for making other cool SW
+  url: https://docs.fontawesome.com/web/style/size
 TestRep2:
-  icon: fa fa-cloud
+  description: null
+  icon: at
   title: Subproject TestRep2
   url: https://www.google.com
-  description: FAQ
 TestRep3:
+  description: This is the tool used for making other cool SW and I believe it will
+    help create many other great tools
   icon: fa fa-cloud
   title: Subproject TestRep2
   url: https://www.google.com
-  description:  This is the tool used for making other cool SW and I believe it will help create many other great tools
 TestRep4:
+  description: For further information please check out the shop
   icon: fa fa-bath
   title: Subproject TestRep1
   url: https://www.google.com
-  description: For further information please check out the shop
 TestRep5:
+  description: FAQ
   icon: fa fa-cloud
   title: Subproject TestRep2
   url: https://www.google.com
-  description: FAQ
 TestRep6:
+  description: FAQ
   icon: fa fa-cloud
   title: Subproject TestRep2
   url: https://www.google.com
-  description: FAQ
