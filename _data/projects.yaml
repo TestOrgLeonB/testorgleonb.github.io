@@ -1,11 +1,11 @@
 TestRep1:
   description: null
-  icon: fa-bicycle
+  icon: fa fa-bicycle
   title: New fun amazing TestRep1
   url: https://docs.fontawesome.com/web/style/size
 TestRep2:
   description: null
-  icon: fa-car
+  icon: fa fa-car
   title: Subproject TestRep2
   url: https://www.google.com
 TestRep3:
